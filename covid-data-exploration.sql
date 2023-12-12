@@ -1,6 +1,8 @@
 SELECT *
 FROM dbo.CovidDeaths;
 
+----------------- DATA EXPLORATION -----------------
+
 -- Looking at total_cases vs total_deaths
 -- Shows the likelihood of dying if you contract covid in the United States at a specific date. 
 SELECT location, date, total_cases, total_deaths, 100.0*total_deaths/total_cases AS death_perc
@@ -96,8 +98,9 @@ Create View populationVaccinatedPerc AS (
 )
 
 
------------------
+----------------- TABLE CREATION -----------------
 -- queries to create table and load CSV
+
 -- create table for CovidDeaths
 CREATE TABLE CovidDeaths (
     iso_code VARCHAR(10)
